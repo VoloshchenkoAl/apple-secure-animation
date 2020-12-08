@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    height: calc(3 * 100vh);
+}
+
+.animation-security {
+    width: 76px;
+    height: 100px;
+    background-size: 608px 900px;
+    background-repeat: no-repeat;
+    background-image: url('./security.png');
+    background-position: 0px 0px;
+    animation-duration: 72s;
+    animation-iteration-count: initial;
+    animation-play-state: paused;
+    animation-timing-function: steps(1);
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-name: unlock_animation;
+}
+
+@keyframes unlock_animation {
+    $index: 1;
+    @for $i from 0 through 8 {
+        @for $j from 0 through 7 {
+            #{100 / 72 * $index}% {
+                background-position: #{-76 * $j}px #{-100 * $i}px;
+                $index: $index + 1;
+            }
+        }
+    }
+}
