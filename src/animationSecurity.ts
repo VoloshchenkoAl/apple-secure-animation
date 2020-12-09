@@ -17,7 +17,7 @@ const getElementPosition = (): { top: number; bottom: number } => {
 
 const getAnimationPosition = (): { top: number; bottom: number } => {
     const top = currentPosition.top - innerHeight * 0.8;
-    const bottom = currentPosition.bottom - innerHeight * 0.55;
+    const bottom = currentPosition.bottom - innerHeight * 0.5;
 
     return {
         top,
